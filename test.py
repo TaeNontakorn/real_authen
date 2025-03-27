@@ -24,9 +24,10 @@ class AuthRequest(BaseModel):
 
 # ฐานข้อมูลจำลองของ client และ role
 clients_db = {
-    "admin0": {"client_secret": "adminsecret", "role": "admin"},
-    "user0": {"client_secret": "usersecret", "role": "user"},
-    "guest0": {"client_secret": "guestsecret", "role": "guest"},
+    "bosskung": {"client_secret": "123456", "role": "member"},
+    "bossmiao": {"client_secret": "123456", "role": "member"},
+    "bosstae": {"client_secret": "123456", "role": "member"},
+    "guest": {"client_secret": "123", "role": "guest"},
 }
 
 def create_jwt_token(data: dict, expires_delta: int):
