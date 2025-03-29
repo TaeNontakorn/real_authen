@@ -39,6 +39,6 @@ def create_jwt_token(data: dict, expires_delta: int):
 def authenticate(auth: AuthRequest):
     client = clients_db.get(auth.client_id)
     if client and client["client_secret"] == auth.client_secret:
-        token = create_jwt_token({"sub": auth.client_id, "role": client["role"]}, expires_delta=10)
+        token = create_jwt_token({"sub": auth.client_id, "role": client["role"]}, expires_delta=1)
         return {"access_token": token, "role": client["role"]}
     raise HTTPException(status_code=401, detail="Invalid credentials")
